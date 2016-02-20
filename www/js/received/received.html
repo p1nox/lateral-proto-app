@@ -1,0 +1,40 @@
+<ion-view view-title="Receive">
+  <ion-content>
+
+    <ul class="list">
+      <li class="item item-toggle">
+         {{listeningLabel}}
+         <label ng-click="changeListeningStatus(listening)" class="toggle toggle toggle-balanced">
+           <input ng-model="listening" type="checkbox" checked="">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </li>
+    </ul>
+
+    <div ng-if="messages.length <= 0" class="card">
+      <div class="item item-text-wrap center">
+        No messages received yet on {{MY_NUMBER}}.
+        <br />
+        Start listening!
+      </div>
+    </div>
+
+    <div ng-if="messages.length > 0" class="card">
+      <div class="item item-text-wrap center">
+        {{MY_NUMBER}} receiving!
+      </div>
+    </div>
+
+    <div ng-repeat="m in messages" class="card">
+      <div class="item item-divider">
+        {{m.number}} <i ng-if="m.sent" class="ion-paper-airplane"></i>
+      </div>
+      <div class="item item-text-wrap">
+        {{m.content}}
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

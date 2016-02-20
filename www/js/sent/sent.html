@@ -1,0 +1,19 @@
+<ion-view view-title="Send">
+  <ion-content>
+
+    <div class="content has-header">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input ng-model="Message.content" ng-trim="true" type="text" placeholder="Message">
+        </label>
+        <i>Urgency 1 by default.</i>
+      </div>
+      <div class="padding">
+        <button ng-click="sendMessage(Message)" class="button button-block button-positive">
+          Send
+        </button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
